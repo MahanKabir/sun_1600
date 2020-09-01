@@ -1,9 +1,100 @@
 {% extends 'main.html' %}
 
 {% block content %}
-    <form action="{% url 'course.create' %}" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form }}
-        <input class="btn btn-success" type="submit" value="Send Course">
-    </form>
+
+
+
+<div class="container">
+  <div class="row justify-content-center mt-3">
+      <div class="card col-8">
+        <form class="form-group" action="{% url 'course.create' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="header">
+            <h2>Create Course</h2>
+          </div>
+          <div class="body">
+            <div>
+              <label for="id_name">Name :</label><br>
+              <input class="form-control" type="text" name="name" id="id_name" placeholder="Enter a name...">
+            </div>
+
+            <div>
+              <label for="id_type">Type :</label><br>
+              <input class="form-control" type="text" name="type" id="id_type" placeholder="Enter a type...">
+            </div>
+
+            <div>
+              <label for="id_price">Price :</label><br>
+              <input class="form-control" type="text" name="price" id="id_price" placeholder="Enter a price...">
+            </div>
+
+            <div>
+              <label for="id_image">Image :</label><br>
+              <input class="form-control" type="file" name="image" id="id_image" placeholder="Enter a image...">
+            </div>
+          </div>
+          <div class="footer">
+            <input type="submit" class="btn btn-success col-12" value="Create">
+          </div>
+        </form>
+
+      </div>
+  </div>
+</div>
+
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+  <div class="row">
+    <form>
+      <div class="card">
+        <div class="card-header"></div>
+        <div class="card-body"></div>
+        <div class="card-footer"></div>
+      </div>
+    </form>
+  </div>
+</div>
+

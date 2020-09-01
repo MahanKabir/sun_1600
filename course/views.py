@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from course.forms import CourseForm
@@ -13,14 +13,16 @@ def create(request):
     else:
         form = CourseForm()
 
-    return render(request, 'admin/course/create.html', {'form': form})
+    return render(request, 'admin/course/create.html')
 
 def read(request):
     courses = Course.objects.all()
     return render(request, 'admin/course/view.html', {'courses': courses})
 
-def update(request):
+def update(request, id):
     pass
 
-def delete(request):
-    pass
+def delete(request, id):
+    course = Course.objects.get(id = id)
+    course.delete()
+    return redirect('course.view')
